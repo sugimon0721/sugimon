@@ -1,0 +1,30 @@
+{
+  "_説明": "ここを書き換えて build.py を実行すると、HTTP Shortcuts と MacroDroid のインポート用ファイルが作り直される。id は HTTP Shortcuts のショートカットID（MacroDroid から呼ぶときの宛先）。新しく足すときは id を空文字にすると自動で振られる。",
+  "category_id": "abfa04a3-d957-4019-a5d7-451e1f7297e1",
+  "shortcuts": [
+    { "id": "795e2e6d-d246-4529-a781-b7f0f4cacfd2", "name": "ジムON",            "code": "notionCheck(\"ジム\");" },
+    { "id": "7fc9bc29-dade-4660-9922-f318ef6ddd4f", "name": "バイクON",          "code": "notionCheck(\"バイク\");" },
+    { "id": "59287142-93f2-48ed-9e12-52f46e58dfa6", "name": "ゴルフON",          "code": "notionCheck(\"ゴルフ\");" },
+    { "id": "cbb3c0a1-38a4-4019-aa3d-2011bbd48643", "name": "ゴミ捨てON",        "code": "notionCheck(\"ゴミ捨て\");" },
+    { "id": "dab78085-ed13-4d36-8d9e-f99828890dd9", "name": "除湿機の水替えON",  "code": "notionCheck(\"除湿機の水替え\");" },
+    { "id": "bba1bf69-1bfe-4a8d-a899-e97cf0c09cbc", "name": "ルンバの水替えON",  "code": "notionCheck(\"ルンバの水替え\");" },
+    { "id": "04a1f2b7-2b4a-4907-9bd6-daf10eb38201", "name": "CPAP乾燥ON",        "code": "notionCheck(\"CPAP乾燥\");" },
+    { "id": "2c66b4f9-b9c3-44ff-bb09-1a192efd21b2", "name": "CPAP装着ON",        "code": "notionCheck(\"CPAP装着\");" },
+    { "id": "10fbdf68-100b-4761-bc75-4627c3addbf5", "name": "2L飲料+1",          "code": "notionCount(\"2L飲料\");" },
+    { "id": "fa1ba2d8-aef7-41bf-9266-58661b0c71ec", "name": "冷凍弁当+1",        "code": "notionCount(\"冷凍弁当\");" },
+    { "id": "ac2039ec-1ae6-466a-8788-28b38279b611", "name": "プロテイン回数+1",  "code": "notionCount(\"プロテイン回数\");" },
+    { "id": "14d6a34d-3ed6-4187-bf20-d94f5b90b0ac", "name": "買い物メモ",        "code": "notionMemo(\"🛒 買う\");" },
+    { "id": "5b0f3c1e-8a4d-4c2e-9f6b-2d7e1a9c4b30", "name": "シャワー時刻",      "code": "notionTime(\"シャワー時刻\", \"シャワー時刻（グラフ用）\");" },
+    { "id": "8e2a7d94-1c3b-4f5a-b6e8-0f9d2c4a7e11", "name": "Notion接続テスト",  "code": "notionTest();" }
+  ],
+  "macrodroid": {
+    "_説明": "既存マクロに「HTTP Shortcuts を呼ぶ」アクションを足す。before_class を指定するとそのアクションの直前、無ければ末尾に入る。new_macros はマクロを新規に作る（トリガーなし＝手動実行用）。",
+    "add_to_existing": [
+      { "macro": "シャワー",                  "shortcut": "シャワー時刻" },
+      { "macro": "ジム準備完了&体重計起動",    "shortcut": "ジムON", "before_class": "LaunchActivityAction" }
+    ],
+    "new_macros": [
+      { "name": "Notion接続テスト", "category": "ユーティリティー", "shortcut": "Notion接続テスト" }
+    ]
+  }
+}

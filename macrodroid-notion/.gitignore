@@ -1,0 +1,5 @@
+# トークン入りの生成物・エクスポートは入れない
+dist/
+*.mdr
+*.zip
+shortcuts.json
