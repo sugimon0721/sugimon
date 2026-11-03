@@ -193,6 +193,20 @@ test("買い物メモ 入力キャンセル → 何も送らない", () => {
   assert.strictEqual(r.notion.state.calls.length, 0);
 });
 
+test("気がかりメモ → インボックスに1件（タグ なし・台帳: 寝る前に気がかりを1行ずつ書く）", () => {
+  const r = runShortcut(byName["気がかりメモ"], { promptValue: "明日の資料の確認" });
+  assert.strictEqual(r.notion.state.created.length, 1, r.toasts.join(" / "));
+  assert.strictEqual(r.notion.state.created[0]["内容/タイトル"].title[0].text.content, "明日の資料の確認");
+  assert.strictEqual(r.notion.state.created[0]["クイックタグ"].select.name, "なし");
+  assert.strictEqual(r.notion.state.calls.filter((c) => c.method === "PATCH").length, 0);
+});
+
+test("気がかりメモ 入力キャンセル → 何も送らない", () => {
+  const r = runShortcut(byName["気がかりメモ"], { promptValue: "" });
+  assert.strictEqual(r.aborted, true);
+  assert.strictEqual(r.notion.state.calls.length, 0);
+});
+
 test("接続テスト → 書き換えなし・OK表示", () => {
   const r = runShortcut(byName["Notion接続テスト"], {});
   assert.ok(r.toasts[0].startsWith("✓ 接続OK 健康記録 / 今日の行あり"), r.toasts.join(" / "));

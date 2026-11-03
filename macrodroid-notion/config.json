@@ -14,6 +14,7 @@
     { "id": "fa1ba2d8-aef7-41bf-9266-58661b0c71ec", "name": "冷凍弁当+1",        "code": "notionCount(\"冷凍弁当\");" },
     { "id": "ac2039ec-1ae6-466a-8788-28b38279b611", "name": "プロテイン回数+1",  "code": "notionCount(\"プロテイン回数\");" },
     { "id": "14d6a34d-3ed6-4187-bf20-d94f5b90b0ac", "name": "買い物メモ",        "code": "notionMemo(\"🛒 買う\");" },
+    { "id": "38815ed4-0233-49b4-aa32-aa4cfa53e111", "name": "気がかりメモ",      "code": "notionMemo(\"なし\");" },
     { "id": "5b0f3c1e-8a4d-4c2e-9f6b-2d7e1a9c4b30", "name": "シャワー時刻",      "code": "notionTime(\"シャワー時刻\", \"シャワー時刻（グラフ用）\");" },
     { "id": "8e2a7d94-1c3b-4f5a-b6e8-0f9d2c4a7e11", "name": "Notion接続テスト",  "code": "notionTest();" }
   ],
